@@ -1,0 +1,2469 @@
+[
+  {
+    "serviceName": "Apache HTTP Server",
+    "protocol": "http",
+    "ports": [80, 443, 8080, 8443, 8081, 8082, 8088, 8089, 8090, 8180, 8280, 8380],
+    "bannerPatterns": ["Apache", "Apache/2", "Apache-HTTPD", "Apache/2.2", "Apache/2.4"],
+    "headerPatterns": {
+      "Server": ["Apache", "Apache/2", "Apache-HTTPD", "Apache/2.2", "Apache/2.4"],
+      "X-Powered-By": ["PHP", "ASP.NET"]
+    },
+    "htmlPatterns": ["<title>Test Page for Apache", "Apache.*Test Page", "It works!.*Apache", "Powered by Apache"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Nginx",
+    "protocol": "http",
+    "ports": [80, 443, 8080, 8443, 8081, 8082, 8088, 8089, 8090, 8181, 8281],
+    "bannerPatterns": ["nginx", "nginx/", "nginx/1.14", "nginx/1.16", "nginx/1.18", "nginx/1.20"],
+    "headerPatterns": {
+      "Server": ["nginx", "nginx/", "nginx/1.14", "nginx/1.16", "nginx/1.18", "nginx/1.20"]
+    },
+    "htmlPatterns": ["Welcome to nginx", "<title>Welcome to nginx", "nginx.com", "Thank you for using nginx"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Microsoft IIS",
+    "protocol": "http",
+    "ports": [80, 443, 8080, 8443, 81, 82, 83, 85, 88],
+    "bannerPatterns": ["Microsoft-IIS", "IIS", "Microsoft-IIS/7.5", "Microsoft-IIS/8.0", "Microsoft-IIS/8.5", "Microsoft-IIS/10.0"],
+    "headerPatterns": {
+      "Server": ["Microsoft-IIS", "IIS", "Microsoft-IIS/7.5", "Microsoft-IIS/8.0", "Microsoft-IIS/8.5", "Microsoft-IIS/10.0"],
+      "X-Powered-By": ["ASP.NET", "ASP.NET_Core", "ARR", "URLRewrite"]
+    },
+    "htmlPatterns": ["IIS Windows", "Microsoft IIS", "IIS 7.5", "IIS 8.0", "IIS 10.0", "Internet Information Services"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Apache Tomcat",
+    "protocol": "http",
+    "ports": [8080, 8009, 8443, 8081, 8082, 8088, 8089, 8090, 8000, 8888, 8005, 8006],
+    "bannerPatterns": ["Apache-Coyote", "Tomcat", "Apache Tomcat"],
+    "headerPatterns": {
+      "Server": ["Apache-Coyote", "Tomcat", "Apache Tomcat"]
+    },
+    "htmlPatterns": ["Apache Tomcat", "Tomcat Management", "Tomcat Web Application Manager", "org.apache.catalina", "Tomcat Administrator"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Jenkins",
+    "protocol": "http",
+    "ports": [8080, 8081, 8082, 8083, 8084, 8085, 80, 443, 8443, 8086, 8087],
+    "bannerPatterns": ["Jenkins"],
+    "headerPatterns": {
+      "X-Jenkins": [".*"],
+      "Server": ["Jenkins"],
+      "X-Hudson": [".*"]
+    },
+    "htmlPatterns": ["Jenkins", "jenkins-ci.org", "Dashboard [Jenkins]", "Hudson", "X-Jenkins"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "RabbitMQ Management",
+    "protocol": "http",
+    "ports": [15672, 15671, 15670, 15673, 80, 443, 8080, 8443],
+    "bannerPatterns": ["RabbitMQ"],
+    "headerPatterns": {
+      "Server": ["Cowboy", "RabbitMQ"]
+    },
+    "htmlPatterns": ["RabbitMQ Management", "rabbitmq", "management.rabbitmq", "RabbitMQ Management UI"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "WordPress",
+    "protocol": "http",
+    "ports": [80, 443, 8080, 8443, 8081, 8082],
+    "bannerPatterns": ["WordPress", "wp-", "wp-includes", "wp-content"],
+    "headerPatterns": {
+      "X-Powered-By": ["PHP"],
+      "X-Generator": ["WordPress"]
+    },
+    "htmlPatterns": ["WordPress", "wp-admin", "wp-login.php", "wordpress", "Powered by WordPress"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Drupal",
+    "protocol": "http",
+    "ports": [80, 443, 8080, 8443],
+    "bannerPatterns": ["Drupal", "drupal"],
+    "headerPatterns": {
+      "X-Generator": ["Drupal"],
+      "X-Drupal-Cache": [".*"]
+    },
+    "htmlPatterns": ["Drupal", "drupal.org", "Drupal.settings", "Powered by Drupal"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Joomla",
+    "protocol": "http",
+    "ports": [80, 443, 8080, 8443],
+    "bannerPatterns": ["Joomla", "joomla"],
+    "headerPatterns": {
+      "X-Content-Encoded-By": ["Joomla"],
+      "X-Powered-By": ["Joomla"]
+    },
+    "htmlPatterns": ["Joomla", "joomla.org", "Powered by Joomla", "Joomla! CMS"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Elasticsearch",
+    "protocol": "http",
+    "ports": [9200, 9300, 9201, 9301, 9202, 9302],
+    "bannerPatterns": ["elasticsearch", "lucene", "You Know, for Search"],
+    "headerPatterns": {
+      "content-type": ["application/json"]
+    },
+    "htmlPatterns": ["\"cluster_name\"", "\"version\"", "\"tagline\"", "You Know, for Search"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Kibana",
+    "protocol": "http",
+    "ports": [5601, 5602, 5603, 5604, 80, 443, 8080],
+    "bannerPatterns": ["kibana"],
+    "headerPatterns": {
+      "kbn-name": ["kibana"],
+      "content-security-policy": [".*kibana.*"]
+    },
+    "htmlPatterns": ["kibana", "Kibana", "Loading Kibana", "kibanaWelcomeView"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Grafana",
+    "protocol": "http",
+    "ports": [3000, 3001, 3002, 3003, 80, 443, 8080],
+    "bannerPatterns": ["grafana"],
+    "headerPatterns": {
+      "Set-Cookie": ["grafana_session"],
+      "X-Frame-Options": ["deny"]
+    },
+    "htmlPatterns": ["Grafana", "grafana", "Grafana - Home", "window.grafanaBootData"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Prometheus",
+    "protocol": "http",
+    "ports": [9090, 9091, 9092, 9093, 8080, 80, 443],
+    "bannerPatterns": ["Prometheus", "prometheus"],
+    "headerPatterns": {
+      "Server": ["Prometheus"]
+    },
+    "htmlPatterns": ["Prometheus", "prometheus", "Prometheus Time Series", "Graph", "Alerts"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "MySQL Database",
+    "protocol": "mysql",
+    "ports": [3306, 3307, 3308, 3309, 3310],
+    "bannerPatterns": ["mysql", "MySQL", "mariadb", "MariaDB"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "PostgreSQL Database",
+    "protocol": "postgresql",
+    "ports": [5432, 5433, 5434, 5435, 5436],
+    "bannerPatterns": ["PostgreSQL", "postgres"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "MongoDB",
+    "protocol": "mongodb",
+    "ports": [27017, 27018, 27019, 27020, 27021],
+    "bannerPatterns": ["MongoDB", "mongod"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Redis",
+    "protocol": "redis",
+    "ports": [6379, 6380, 6381, 6382, 6383],
+    "bannerPatterns": ["Redis", "redis"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Memcached",
+    "protocol": "memcached",
+    "ports": [11211, 11212, 11213, 11214, 11215],
+    "bannerPatterns": ["memcached"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "SSH Service",
+    "protocol": "ssh",
+    "ports": [22, 2222, 222, 22222, 2223, 2224],
+    "bannerPatterns": ["SSH-2.0", "SSH-1.99", "OpenSSH"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "FTP Service",
+    "protocol": "ftp",
+    "ports": [21, 2121, 2122, 2123, 2124],
+    "bannerPatterns": ["220", "FTP", "vsFTPd", "ProFTPD", "Pure-FTPd"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Telnet Service",
+    "protocol": "telnet",
+    "ports": [23, 2323, 2324, 2325, 2326],
+    "bannerPatterns": ["Welcome", "login:", "Password:", "Ubuntu", "CentOS"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "medium"
+  },
+  {
+    "serviceName": "SMTP Service",
+    "protocol": "smtp",
+    "ports": [25, 465, 587, 2525, 2526],
+    "bannerPatterns": ["220", "ESMTP", "Postfix", "Sendmail", "Exim", "Microsoft ESMTP"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "DNS Service",
+    "protocol": "dns",
+    "ports": [53, 5353, 5354, 5355],
+    "bannerPatterns": [],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "medium"
+  },
+  {
+    "serviceName": "HTTP Proxy",
+    "protocol": "http",
+    "ports": [3128, 8080, 8888, 8118, 8123, 8000, 8081],
+    "bannerPatterns": ["squid", "Squid", "proxy"],
+    "headerPatterns": {
+      "Server": ["squid", "Squid"]
+    },
+    "htmlPatterns": ["ERROR: The requested URL could not be retrieved", "Access control configuration prevents your request"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Docker Registry",
+    "protocol": "http",
+    "ports": [5000, 5001, 5002, 5003, 5004],
+    "bannerPatterns": ["Docker Registry", "docker-registry"],
+    "headerPatterns": {
+      "Docker-Distribution-Api-Version": ["registry"]
+    },
+    "htmlPatterns": ["docker-registry", "Docker Registry"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Kubernetes API",
+    "protocol": "https",
+    "ports": [6443, 8443, 443, 9443],
+    "bannerPatterns": ["kubernetes", "Kubernetes"],
+    "headerPatterns": {
+      "Server": ["Kubernetes"]
+    },
+    "htmlPatterns": ["kubernetes", "Kubernetes", "Unauthorized"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "GitLab",
+    "protocol": "http",
+    "ports": [80, 443, 8080, 8443, 8081],
+    "bannerPatterns": ["GitLab", "_gitlab_session"],
+    "headerPatterns": {
+      "Server": ["GitLab"],
+      "Set-Cookie": ["_gitlab_session"]
+    },
+    "htmlPatterns": ["GitLab", "gitlab", "Welcome to GitLab", "Forgot your password?"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Confluence",
+    "protocol": "http",
+    "ports": [8090, 8091, 8092, 8093, 8094, 80, 443],
+    "bannerPatterns": ["Confluence", "confluence"],
+    "headerPatterns": {
+      "X-ASEN": ["Confluence"],
+      "Set-Cookie": ["JSESSIONID", "seraph.confluence"]
+    },
+    "htmlPatterns": ["Confluence", "confluence", "Atlassian Confluence", "Log In - Confluence"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Jira",
+    "protocol": "http",
+    "ports": [8080, 8081, 8082, 8083, 8084, 80, 443],
+    "bannerPatterns": ["JIRA", "jira", "atlassian"],
+    "headerPatterns": {
+      "X-ASEN": ["JIRA"],
+      "Set-Cookie": ["JSESSIONID", "atlassian.xsrf.token"]
+    },
+    "htmlPatterns": ["JIRA", "jira", "Atlassian Jira", "Log In - Jira", "jira.logo"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Bitbucket",
+    "protocol": "http",
+    "ports": [7990, 7991, 7992, 7993, 7994, 80, 443, 8080],
+    "bannerPatterns": ["Bitbucket", "bitbucket"],
+    "headerPatterns": {
+      "Server": ["Bitbucket"],
+      "Set-Cookie": ["BITBUCKETSESSIONID"]
+    },
+    "htmlPatterns": ["Bitbucket", "bitbucket", "Atlassian Bitbucket", "Log in to Bitbucket"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "SonarQube",
+    "protocol": "http",
+    "ports": [9000, 9001, 9002, 9003, 9004],
+    "bannerPatterns": ["SonarQube", "sonarqube"],
+    "headerPatterns": {
+      "Server": ["SonarQube"]
+    },
+    "htmlPatterns": ["SonarQube", "sonarqube", "SonarQube - Home", "window.sonarqube"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Nexus Repository",
+    "protocol": "http",
+    "ports": [8081, 8082, 8083, 8084, 8085, 80, 443],
+    "bannerPatterns": ["Nexus", "nexus"],
+    "headerPatterns": {
+      "Server": ["Nexus"],
+      "Set-Cookie": ["NXSESSIONID"]
+    },
+    "htmlPatterns": ["Nexus Repository Manager", "nexus", "Nexus", "Welcome to Nexus Repository Manager"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Artifactory",
+    "protocol": "http",
+    "ports": [8081, 8082, 8083, 8084, 8085, 80, 443],
+    "bannerPatterns": ["Artifactory", "artifactory"],
+    "headerPatterns": {
+      "Server": ["Artifactory"]
+    },
+    "htmlPatterns": ["Artifactory", "artifactory", "JFrog Artifactory", "Welcome to Artifactory"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Hadoop HDFS",
+    "protocol": "http",
+    "ports": [50070, 50075, 50090, 9870, 9864],
+    "bannerPatterns": ["Hadoop", "hadoop"],
+    "headerPatterns": {
+      "Server": ["Hadoop"]
+    },
+    "htmlPatterns": ["Hadoop", "hadoop", "HDFS", "Overview - Hadoop"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Spark Master",
+    "protocol": "http",
+    "ports": [8080, 8081, 7077, 8088],
+    "bannerPatterns": ["Spark", "spark"],
+    "headerPatterns": {
+      "Server": ["Spark"]
+    },
+    "htmlPatterns": ["Spark Master", "spark", "Spark Jobs", "Running Applications"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Zookeeper",
+    "protocol": "tcp",
+    "ports": [2181, 2182, 2183, 2184],
+    "bannerPatterns": ["zookeeper", "Zookeeper"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Kafka",
+    "protocol": "tcp",
+    "ports": [9092, 9093, 9094, 9095],
+    "bannerPatterns": ["kafka", "Kafka"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Cassandra",
+    "protocol": "tcp",
+    "ports": [9042, 9160, 7199, 7000, 7001],
+    "bannerPatterns": ["Cassandra", "cassandra"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "CouchDB",
+    "protocol": "http",
+    "ports": [5984, 5985, 5986, 5987],
+    "bannerPatterns": ["CouchDB", "couchdb"],
+    "headerPatterns": {
+      "Server": ["CouchDB"]
+    },
+    "htmlPatterns": ["CouchDB", "couchdb", "Welcome", "\"couchdb\":\"Welcome\""],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "InfluxDB",
+    "protocol": "http",
+    "ports": [8086, 8087, 8088, 8089],
+    "bannerPatterns": ["InfluxDB", "influxdb"],
+    "headerPatterns": {
+      "X-Influxdb-Version": [".*"]
+    },
+    "htmlPatterns": ["InfluxDB", "influxdb", "\"message\":\"ready for queries and writes\""],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Graylog",
+    "protocol": "http",
+    "ports": [9000, 9001, 9002, 9003],
+    "bannerPatterns": ["Graylog", "graylog"],
+    "headerPatterns": {
+      "Server": ["Graylog"]
+    },
+    "htmlPatterns": ["Graylog", "graylog", "Graylog Web Interface", "Login - Graylog"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Splunk",
+    "protocol": "http",
+    "ports": [8000, 8001, 8002, 8003, 8089, 8088],
+    "bannerPatterns": ["Splunk", "splunk"],
+    "headerPatterns": {
+      "Server": ["Splunkd"]
+    },
+    "htmlPatterns": ["Splunk", "splunk", "Splunk - Sign In", "Splunk®"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "VMware vCenter",
+    "protocol": "https",
+    "ports": [443, 8443, 9443],
+    "bannerPatterns": ["VMware", "vCenter", "vsphere"],
+    "headerPatterns": {
+      "Server": ["VMware"],
+      "Set-Cookie": ["VSPHERE-USER", "VSPHERE-CLIENT"]
+    },
+    "htmlPatterns": ["VMware", "vCenter", "vSphere", "VMware vCenter Server"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Citrix NetScaler",
+    "protocol": "http",
+    "ports": [80, 443, 8080, 8443],
+    "bannerPatterns": ["Citrix", "NetScaler", "ns_aaa"],
+    "headerPatterns": {
+      "Server": ["Citrix", "NetScaler"]
+    },
+    "htmlPatterns": ["Citrix", "NetScaler", "Netscaler", "Citrix Access Gateway"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "F5 BIG-IP",
+    "protocol": "http",
+    "ports": [80, 443, 8080, 8443],
+    "bannerPatterns": ["BIG-IP", "F5", "BIGIP"],
+    "headerPatterns": {
+      "Server": ["BigIP", "BIG-IP"]
+    },
+    "htmlPatterns": ["BIG-IP", "F5", "BIGIP", "F5 Networks"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Fortinet FortiGate",
+    "protocol": "https",
+    "ports": [443, 8443, 10443],
+    "bannerPatterns": ["FortiGate", "Fortinet"],
+    "headerPatterns": {
+      "Server": ["FortiGate"]
+    },
+    "htmlPatterns": ["FortiGate", "Fortinet", "FortiGate Firewall", "FortiGate Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Palo Alto Networks",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Palo Alto", "PAN-OS"],
+    "headerPatterns": {
+      "Server": ["Palo Alto"]
+    },
+    "htmlPatterns": ["Palo Alto", "PAN-OS", "Palo Alto Networks", "GlobalProtect"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Check Point Firewall",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Check Point", "SmartConsole"],
+    "headerPatterns": {
+      "Server": ["Check Point"]
+    },
+    "htmlPatterns": ["Check Point", "SmartConsole", "Check Point Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Cisco ASA",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Cisco", "ASA", "Adaptive Security Appliance"],
+    "headerPatterns": {
+      "Server": ["Cisco", "ASA"]
+    },
+    "htmlPatterns": ["Cisco", "ASA", "Adaptive Security Appliance", "Cisco Systems"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Juniper Netscreen",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Juniper", "Netscreen"],
+    "headerPatterns": {
+      "Server": ["Juniper"]
+    },
+    "htmlPatterns": ["Juniper", "Netscreen", "Juniper Networks"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "HP iLO",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["iLO", "HP Integrated Lights-Out"],
+    "headerPatterns": {
+      "Server": ["HP-iLO-Server"]
+    },
+    "htmlPatterns": ["iLO", "HP Integrated Lights-Out", "HP iLO Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Dell iDRAC",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["iDRAC", "Dell"],
+    "headerPatterns": {
+      "Server": ["iDRAC"]
+    },
+    "htmlPatterns": ["iDRAC", "Dell", "Dell Remote Access Controller"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "IBM IMM",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["IMM", "IBM"],
+    "headerPatterns": {
+      "Server": ["IMM"]
+    },
+    "htmlPatterns": ["IMM", "IBM", "Integrated Management Module"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Supermicro IPMI",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Supermicro", "IPMI"],
+    "headerPatterns": {
+      "Server": ["Supermicro"]
+    },
+    "htmlPatterns": ["Supermicro", "IPMI", "Super Micro Computer"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "VNC Server",
+    "protocol": "vnc",
+    "ports": [5900, 5901, 5902, 5903, 5904, 5905],
+    "bannerPatterns": ["RFB", "VNC"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "RDP Service",
+    "protocol": "rdp",
+    "ports": [3389, 3388, 3387, 3386, 3385],
+    "bannerPatterns": ["RDP", "Microsoft Terminal Services"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "TeamViewer",
+    "protocol": "tcp",
+    "ports": [5938, 5939, 5940, 5941, 5942],
+    "bannerPatterns": ["TeamViewer"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Webmin",
+    "protocol": "http",
+    "ports": [10000, 10001, 10002, 10003, 10004],
+    "bannerPatterns": ["Webmin", "webmin"],
+    "headerPatterns": {
+      "Server": ["MiniServ"]
+    },
+    "htmlPatterns": ["Webmin", "webmin", "Login to Webmin", "Webmin Server"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "cPanel",
+    "protocol": "http",
+    "ports": [2082, 2083, 2086, 2087, 2095, 2096],
+    "bannerPatterns": ["cPanel", "WHM"],
+    "headerPatterns": {
+      "Server": ["cPanel", "WHM"]
+    },
+    "htmlPatterns": ["cPanel", "WHM", "cPanel Login", "WHM Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Plesk",
+    "protocol": "http",
+    "ports": [8443, 8447, 8880, 8443],
+    "bannerPatterns": ["Plesk", "plesk"],
+    "headerPatterns": {
+      "Server": ["Plesk"]
+    },
+    "htmlPatterns": ["Plesk", "plesk", "Plesk Login", "Plesk Obsidian"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "DirectAdmin",
+    "protocol": "http",
+    "ports": [2222, 2223, 2224, 2225],
+    "bannerPatterns": ["DirectAdmin", "directadmin"],
+    "headerPatterns": {
+      "Server": ["DirectAdmin"]
+    },
+    "htmlPatterns": ["DirectAdmin", "directadmin", "DirectAdmin Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Virtualmin",
+    "protocol": "http",
+    "ports": [10000, 10001, 10002],
+    "bannerPatterns": ["Virtualmin", "virtualmin"],
+    "headerPatterns": {
+      "Server": ["Virtualmin"]
+    },
+    "htmlPatterns": ["Virtualmin", "virtualmin", "Virtualmin Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "ISPConfig",
+    "protocol": "http",
+    "ports": [8080, 8081, 8082],
+    "bannerPatterns": ["ISPConfig", "ispconfig"],
+    "headerPatterns": {
+      "Server": ["ISPConfig"]
+    },
+    "htmlPatterns": ["ISPConfig", "ispconfig", "ISPConfig Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Ajenti",
+    "protocol": "http",
+    "ports": [8000, 8001, 8002],
+    "bannerPatterns": ["Ajenti", "ajenti"],
+    "headerPatterns": {
+      "Server": ["Ajenti"]
+    },
+    "htmlPatterns": ["Ajenti", "ajenti", "Ajenti Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Cockpit",
+    "protocol": "http",
+    "ports": [9090, 9091, 9092],
+    "bannerPatterns": ["Cockpit", "cockpit"],
+    "headerPatterns": {
+      "Server": ["Cockpit"]
+    },
+    "htmlPatterns": ["Cockpit", "cockpit", "Cockpit Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Portainer",
+    "protocol": "http",
+    "ports": [9000, 9001, 9002],
+    "bannerPatterns": ["Portainer", "portainer"],
+    "headerPatterns": {
+      "Server": ["Portainer"]
+    },
+    "htmlPatterns": ["Portainer", "portainer", "Portainer Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Rancher",
+    "protocol": "http",
+    "ports": [80, 443, 8080, 8443],
+    "bannerPatterns": ["Rancher", "rancher"],
+    "headerPatterns": {
+      "Server": ["Rancher"]
+    },
+    "htmlPatterns": ["Rancher", "rancher", "Rancher Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "OpenStack Horizon",
+    "protocol": "http",
+    "ports": [80, 443, 8080, 8443],
+    "bannerPatterns": ["OpenStack", "Horizon"],
+    "headerPatterns": {
+      "Server": ["OpenStack"]
+    },
+    "htmlPatterns": ["OpenStack", "Horizon", "OpenStack Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "VMware ESXi",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["VMware", "ESXi"],
+    "headerPatterns": {
+      "Server": ["VMware"]
+    },
+    "htmlPatterns": ["VMware", "ESXi", "VMware ESXi"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Proxmox VE",
+    "protocol": "https",
+    "ports": [8006, 8007, 8008],
+    "bannerPatterns": ["Proxmox", "pve"],
+    "headerPatterns": {
+      "Server": ["Proxmox"]
+    },
+    "htmlPatterns": ["Proxmox", "pve", "Proxmox Virtual Environment"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "XenServer",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["XenServer", "Citrix"],
+    "headerPatterns": {
+      "Server": ["XenServer"]
+    },
+    "htmlPatterns": ["XenServer", "Citrix", "XenServer Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Oracle VM Manager",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Oracle", "OVM"],
+    "headerPatterns": {
+      "Server": ["Oracle"]
+    },
+    "htmlPatterns": ["Oracle", "OVM", "Oracle VM Manager"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Microsoft Hyper-V",
+    "protocol": "http",
+    "ports": [80, 443, 2179, 6600],
+    "bannerPatterns": ["Hyper-V", "Microsoft"],
+    "headerPatterns": {
+      "Server": ["Microsoft-HTTPAPI"]
+    },
+    "htmlPatterns": ["Hyper-V", "Microsoft", "Hyper-V Manager"],
+    "confidence": "medium"
+  },
+  {
+    "serviceName": "KVM",
+    "protocol": "tcp",
+    "ports": [16509, 16514, 5900, 5901],
+    "bannerPatterns": ["QEMU", "KVM"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "medium"
+  },
+  {
+    "serviceName": "VirtualBox",
+    "protocol": "tcp",
+    "ports": [18083, 3389, 5900],
+    "bannerPatterns": ["VirtualBox", "Oracle"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "medium"
+  },
+  {
+    "serviceName": "Docker API",
+    "protocol": "http",
+    "ports": [2375, 2376, 2377, 2378],
+    "bannerPatterns": ["Docker", "docker"],
+    "headerPatterns": {
+      "Server": ["Docker"]
+    },
+    "htmlPatterns": ["Docker", "docker", "ApiVersion", "Containers"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Kubernetes Dashboard",
+    "protocol": "http",
+    "ports": [8001, 8080, 8443, 9090],
+    "bannerPatterns": ["Kubernetes Dashboard", "kubernetes-dashboard"],
+    "headerPatterns": {
+      "Server": ["Kubernetes Dashboard"]
+    },
+    "htmlPatterns": ["Kubernetes Dashboard", "kubernetes-dashboard", "Kubernetes Dashboard Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "OpenShift Console",
+    "protocol": "https",
+    "ports": [443, 8443, 6443],
+    "bannerPatterns": ["OpenShift", "openshift"],
+    "headerPatterns": {
+      "Server": ["OpenShift"]
+    },
+    "htmlPatterns": ["OpenShift", "openshift", "OpenShift Console"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Rook",
+    "protocol": "http",
+    "ports": [8443, 9443],
+    "bannerPatterns": ["Rook", "rook"],
+    "headerPatterns": {
+      "Server": ["Rook"]
+    },
+    "htmlPatterns": ["Rook", "rook", "Rook Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Istio",
+    "protocol": "http",
+    "ports": [15000, 15001, 15004, 15010],
+    "bannerPatterns": ["Istio", "istio"],
+    "headerPatterns": {
+      "Server": ["Istio"]
+    },
+    "htmlPatterns": ["Istio", "istio", "Istio Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Linkerd",
+    "protocol": "http",
+    "ports": [9990, 9991, 9992, 9993],
+    "bannerPatterns": ["Linkerd", "linkerd"],
+    "headerPatterns": {
+      "Server": ["Linkerd"]
+    },
+    "htmlPatterns": ["Linkerd", "linkerd", "Linkerd Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Consul",
+    "protocol": "http",
+    "ports": [8500, 8501, 8502, 8503],
+    "bannerPatterns": ["Consul", "consul"],
+    "headerPatterns": {
+      "Server": ["Consul"]
+    },
+    "htmlPatterns": ["Consul", "consul", "Consul UI"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Vault",
+    "protocol": "http",
+    "ports": [8200, 8201, 8202, 8203],
+    "bannerPatterns": ["Vault", "vault"],
+    "headerPatterns": {
+      "Server": ["Vault"]
+    },
+    "htmlPatterns": ["Vault", "vault", "Vault UI"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Nomad",
+    "protocol": "http",
+    "ports": [4646, 4647, 4648, 4649],
+    "bannerPatterns": ["Nomad", "nomad"],
+    "headerPatterns": {
+      "Server": ["Nomad"]
+    },
+    "htmlPatterns": ["Nomad", "nomad", "Nomad UI"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Traefik",
+    "protocol": "http",
+    "ports": [8080, 8081, 8082, 8083],
+    "bannerPatterns": ["Traefik", "traefik"],
+    "headerPatterns": {
+      "Server": ["Traefik"]
+    },
+    "htmlPatterns": ["Traefik", "traefik", "Traefik Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Nginx Plus",
+    "protocol": "http",
+    "ports": [8080, 8081, 8082],
+    "bannerPatterns": ["NGINX Plus", "nginx-plus"],
+    "headerPatterns": {
+      "Server": ["NGINX Plus"]
+    },
+    "htmlPatterns": ["NGINX Plus", "nginx-plus", "NGINX Plus Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "HAProxy",
+    "protocol": "http",
+    "ports": [1936, 1937, 1938, 1939],
+    "bannerPatterns": ["HAProxy", "haproxy"],
+    "headerPatterns": {
+      "Server": ["HAProxy"]
+    },
+    "htmlPatterns": ["HAProxy", "haproxy", "HAProxy Statistics"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Apache Traffic Server",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["ATS", "Apache Traffic Server"],
+    "headerPatterns": {
+      "Server": ["ATS"]
+    },
+    "htmlPatterns": ["ATS", "Apache Traffic Server"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Varnish Cache",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["Varnish", "varnish"],
+    "headerPatterns": {
+      "Server": ["Varnish"]
+    },
+    "htmlPatterns": ["Varnish", "varnish", "Varnish Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Squid Proxy",
+    "protocol": "http",
+    "ports": [3128, 3129, 3130, 3131],
+    "bannerPatterns": ["squid", "Squid"],
+    "headerPatterns": {
+      "Server": ["squid", "Squid"]
+    },
+    "htmlPatterns": ["squid", "Squid", "ERROR: The requested URL could not be retrieved"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Apache httpd (mod_status)",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["Apache Status", "Server Version", "Server Built"],
+    "headerPatterns": {
+      "Server": ["Apache"]
+    },
+    "htmlPatterns": ["Apache Status", "Server Version", "Server Built", "Scoreboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Nginx (stub_status)",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["Active connections", "server accepts handled requests"],
+    "headerPatterns": {
+      "Server": ["nginx"]
+    },
+    "htmlPatterns": ["Active connections", "server accepts handled requests", "Reading:", "Writing:", "Waiting:"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "PHP-FPM Status",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["pool", "process manager", "start time"],
+    "headerPatterns": {
+      "Server": ["nginx", "Apache"]
+    },
+    "htmlPatterns": ["pool", "process manager", "start time", "accepted conn", "listen queue"],
+    "confidence": "medium"
+  },
+  {
+    "serviceName": "MySQL Admin",
+    "protocol": "http",
+    "ports": [3306, 3307],
+    "bannerPatterns": ["MySQL", "mysql"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "PostgreSQL Admin",
+    "protocol": "http",
+    "ports": [5432, 5433],
+    "bannerPatterns": ["PostgreSQL", "postgres"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "MongoDB Express",
+    "protocol": "http",
+    "ports": [8081, 8082, 8083],
+    "bannerPatterns": ["mongo-express", "MongoDB Express"],
+    "headerPatterns": {
+      "Server": ["mongo-express"]
+    },
+    "htmlPatterns": ["mongo-express", "MongoDB Express", "MongoDB Express Admin"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Redis Commander",
+    "protocol": "http",
+    "ports": [8081, 8082, 8083],
+    "bannerPatterns": ["Redis Commander", "redis-commander"],
+    "headerPatterns": {
+      "Server": ["Redis Commander"]
+    },
+    "htmlPatterns": ["Redis Commander", "redis-commander", "Redis Commander Admin"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Adminer",
+    "protocol": "http",
+    "ports": [8080, 8081, 8082],
+    "bannerPatterns": ["Adminer", "adminer"],
+    "headerPatterns": {
+      "Server": ["Adminer"]
+    },
+    "htmlPatterns": ["Adminer", "adminer", "Adminer Login", "Database"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "phpMyAdmin",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["phpMyAdmin", "pma_"],
+    "headerPatterns": {
+      "Set-Cookie": ["pma_"]
+    },
+    "htmlPatterns": ["phpMyAdmin", "pma_", "phpMyAdmin Login", "Welcome to phpMyAdmin"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "phpPgAdmin",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["phpPgAdmin", "phppgadmin"],
+    "headerPatterns": {
+      "Server": ["phpPgAdmin"]
+    },
+    "htmlPatterns": ["phpPgAdmin", "phppgadmin", "phpPgAdmin Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "SQL Server Management",
+    "protocol": "http",
+    "ports": [1433, 1434],
+    "bannerPatterns": ["Microsoft SQL Server", "MSSQL"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Oracle Enterprise Manager",
+    "protocol": "http",
+    "ports": [1158, 5500, 5501],
+    "bannerPatterns": ["Oracle", "Enterprise Manager"],
+    "headerPatterns": {
+      "Server": ["Oracle"]
+    },
+    "htmlPatterns": ["Oracle", "Enterprise Manager", "Oracle EM"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "IBM DB2 Control Center",
+    "protocol": "http",
+    "ports": [50000, 50001],
+    "bannerPatterns": ["DB2", "IBM"],
+    "headerPatterns": {
+      "Server": ["DB2"]
+    },
+    "htmlPatterns": ["DB2", "IBM", "DB2 Control Center"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Cassandra OpsCenter",
+    "protocol": "http",
+    "ports": [8888, 8889],
+    "bannerPatterns": ["OpsCenter", "DataStax"],
+    "headerPatterns": {
+      "Server": ["OpsCenter"]
+    },
+    "htmlPatterns": ["OpsCenter", "DataStax", "Cassandra OpsCenter"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Couchbase Web Console",
+    "protocol": "http",
+    "ports": [8091, 8092, 8093],
+    "bannerPatterns": ["Couchbase", "couchbase"],
+    "headerPatterns": {
+      "Server": ["Couchbase"]
+    },
+    "htmlPatterns": ["Couchbase", "couchbase", "Couchbase Web Console"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Riak Control",
+    "protocol": "http",
+    "ports": [8098, 8099],
+    "bannerPatterns": ["Riak", "riak"],
+    "headerPatterns": {
+      "Server": ["Riak"]
+    },
+    "htmlPatterns": ["Riak", "riak", "Riak Control"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Neo4j Browser",
+    "protocol": "http",
+    "ports": [7474, 7473, 7687],
+    "bannerPatterns": ["Neo4j", "neo4j"],
+    "headerPatterns": {
+      "Server": ["Neo4j"]
+    },
+    "htmlPatterns": ["Neo4j", "neo4j", "Neo4j Browser"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "ArangoDB Web Interface",
+    "protocol": "http",
+    "ports": [8529, 8530],
+    "bannerPatterns": ["ArangoDB", "arangodb"],
+    "headerPatterns": {
+      "Server": ["ArangoDB"]
+    },
+    "htmlPatterns": ["ArangoDB", "arangodb", "ArangoDB Web Interface"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "OrientDB Studio",
+    "protocol": "http",
+    "ports": [2480, 2481],
+    "bannerPatterns": ["OrientDB", "orientdb"],
+    "headerPatterns": {
+      "Server": ["OrientDB"]
+    },
+    "htmlPatterns": ["OrientDB", "orientdb", "OrientDB Studio"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "InfluxDB Admin",
+    "protocol": "http",
+    "ports": [8083, 8084],
+    "bannerPatterns": ["InfluxDB Admin", "influxdb-admin"],
+    "headerPatterns": {
+      "Server": ["InfluxDB"]
+    },
+    "htmlPatterns": ["InfluxDB Admin", "influxdb-admin", "InfluxDB Administration"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Chronograf",
+    "protocol": "http",
+    "ports": [8888, 8889],
+    "bannerPatterns": ["Chronograf", "chronograf"],
+    "headerPatterns": {
+      "Server": ["Chronograf"]
+    },
+    "htmlPatterns": ["Chronograf", "chronograf", "Chronograf Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Graphite",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["Graphite", "graphite"],
+    "headerPatterns": {
+      "Server": ["Graphite"]
+    },
+    "htmlPatterns": ["Graphite", "graphite", "Graphite Browser"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Graphite Explorer",
+    "protocol": "http",
+    "ports": [8080, 8081],
+    "bannerPatterns": ["Graphite Explorer", "graphite-explorer"],
+    "headerPatterns": {
+      "Server": ["Graphite"]
+    },
+    "htmlPatterns": ["Graphite Explorer", "graphite-explorer"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Carbon",
+    "protocol": "tcp",
+    "ports": [2003, 2004, 2005, 2006],
+    "bannerPatterns": ["Carbon", "carbon"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "medium"
+  },
+  {
+    "serviceName": "StatsD",
+    "protocol": "udp",
+    "ports": [8125, 8126, 8127, 8128],
+    "bannerPatterns": ["StatsD", "statsd"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "medium"
+  },
+  {
+    "serviceName": "CollectD",
+    "protocol": "udp",
+    "ports": [25826, 25827, 25828],
+    "bannerPatterns": ["CollectD", "collectd"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "medium"
+  },
+  {
+    "serviceName": "Telegraf",
+    "protocol": "tcp",
+    "ports": [9273, 9274, 9275],
+    "bannerPatterns": ["Telegraf", "telegraf"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "medium"
+  },
+  {
+    "serviceName": "Nagios",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["Nagios", "nagios"],
+    "headerPatterns": {
+      "Server": ["Nagios"]
+    },
+    "htmlPatterns": ["Nagios", "nagios", "Nagios Core", "Nagios Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Icinga",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["Icinga", "icinga"],
+    "headerPatterns": {
+      "Server": ["Icinga"]
+    },
+    "htmlPatterns": ["Icinga", "icinga", "Icinga Web", "Icinga Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Zabbix",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["Zabbix", "zabbix"],
+    "headerPatterns": {
+      "Server": ["Zabbix"]
+    },
+    "htmlPatterns": ["Zabbix", "zabbix", "Zabbix Login", "Zabbix SIA"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Cacti",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["Cacti", "cacti"],
+    "headerPatterns": {
+      "Server": ["Cacti"]
+    },
+    "htmlPatterns": ["Cacti", "cacti", "Cacti Login", "Cacti Graphs"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Observium",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["Observium", "observium"],
+    "headerPatterns": {
+      "Server": ["Observium"]
+    },
+    "htmlPatterns": ["Observium", "observium", "Observium Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "LibreNMS",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["LibreNMS", "librenms"],
+    "headerPatterns": {
+      "Server": ["LibreNMS"]
+    },
+    "htmlPatterns": ["LibreNMS", "librenms", "LibreNMS Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "PRTG Network Monitor",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["PRTG", "prtg"],
+    "headerPatterns": {
+      "Server": ["PRTG"]
+    },
+    "htmlPatterns": ["PRTG", "prtg", "PRTG Network Monitor", "PRTG Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "SolarWinds Orion",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["SolarWinds", "Orion"],
+    "headerPatterns": {
+      "Server": ["SolarWinds"]
+    },
+    "htmlPatterns": ["SolarWinds", "Orion", "SolarWinds Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "ManageEngine OpManager",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["ManageEngine", "OpManager"],
+    "headerPatterns": {
+      "Server": ["ManageEngine"]
+    },
+    "htmlPatterns": ["ManageEngine", "OpManager", "ManageEngine Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "WhatsUp Gold",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["WhatsUp Gold", "whatsup"],
+    "headerPatterns": {
+      "Server": ["WhatsUp"]
+    },
+    "htmlPatterns": ["WhatsUp Gold", "whatsup", "WhatsUp Gold Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "OpenNMS",
+    "protocol": "http",
+    "ports": [8980, 8981, 8982],
+    "bannerPatterns": ["OpenNMS", "opennms"],
+    "headerPatterns": {
+      "Server": ["OpenNMS"]
+    },
+    "htmlPatterns": ["OpenNMS", "opennms", "OpenNMS Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Zenoss",
+    "protocol": "http",
+    "ports": [8080, 8081, 8082],
+    "bannerPatterns": ["Zenoss", "zenoss"],
+    "headerPatterns": {
+      "Server": ["Zenoss"]
+    },
+    "htmlPatterns": ["Zenoss", "zenoss", "Zenoss Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Centreon",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["Centreon", "centreon"],
+    "headerPatterns": {
+      "Server": ["Centreon"]
+    },
+    "htmlPatterns": ["Centreon", "centreon", "Centreon Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Check_MK",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["Check_MK", "check_mk"],
+    "headerPatterns": {
+      "Server": ["Check_MK"]
+    },
+    "htmlPatterns": ["Check_MK", "check_mk", "Check_MK Login"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Monit",
+    "protocol": "http",
+    "ports": [2812, 2813, 2814],
+    "bannerPatterns": ["Monit", "monit"],
+    "headerPatterns": {
+      "Server": ["Monit"]
+    },
+    "htmlPatterns": ["Monit", "monit", "Monit Status"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Munin",
+    "protocol": "http",
+    "ports": [4949, 4950, 4951],
+    "bannerPatterns": ["Munin", "munin"],
+    "headerPatterns": {
+      "Server": ["Munin"]
+    },
+    "htmlPatterns": ["Munin", "munin", "Munin Graph"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Ganglia",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["Ganglia", "ganglia"],
+    "headerPatterns": {
+      "Server": ["Ganglia"]
+    },
+    "htmlPatterns": ["Ganglia", "ganglia", "Ganglia Monitoring"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Graphana (Alternative)",
+    "protocol": "http",
+    "ports": [3000, 3001, 3002],
+    "bannerPatterns": ["Graphana", "graphana"],
+    "headerPatterns": {
+      "Server": ["Graphana"]
+    },
+    "htmlPatterns": ["Graphana", "graphana", "Graphana Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Thruk",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["Thruk", "thruk"],
+    "headerPatterns": {
+      "Server": ["Thruk"]
+    },
+    "htmlPatterns": ["Thruk", "thruk", "Thruk Monitoring"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Netdata",
+    "protocol": "http",
+    "ports": [19999, 19998, 19997],
+    "bannerPatterns": ["Netdata", "netdata"],
+    "headerPatterns": {
+      "Server": ["Netdata"]
+    },
+    "htmlPatterns": ["Netdata", "netdata", "Netdata Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Uptime Kuma",
+    "protocol": "http",
+    "ports": [3001, 3002, 3003],
+    "bannerPatterns": ["Uptime Kuma", "uptime-kuma"],
+    "headerPatterns": {
+      "Server": ["Uptime Kuma"]
+    },
+    "htmlPatterns": ["Uptime Kuma", "uptime-kuma", "Uptime Kuma Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Uptime Robot",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["Uptime Robot", "uptimerobot"],
+    "headerPatterns": {
+      "Server": ["Uptime Robot"]
+    },
+    "htmlPatterns": ["Uptime Robot", "uptimerobot", "Uptime Robot Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Pingdom",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["Pingdom", "pingdom"],
+    "headerPatterns": {
+      "Server": ["Pingdom"]
+    },
+    "htmlPatterns": ["Pingdom", "pingdom", "Pingdom Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Datadog",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["Datadog", "datadog"],
+    "headerPatterns": {
+      "Server": ["Datadog"]
+    },
+    "htmlPatterns": ["Datadog", "datadog", "Datadog Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "New Relic",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["New Relic", "newrelic"],
+    "headerPatterns": {
+      "Server": ["New Relic"]
+    },
+    "htmlPatterns": ["New Relic", "newrelic", "New Relic Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "AppDynamics",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["AppDynamics", "appdynamics"],
+    "headerPatterns": {
+      "Server": ["AppDynamics"]
+    },
+    "htmlPatterns": ["AppDynamics", "appdynamics", "AppDynamics Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Dynatrace",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["Dynatrace", "dynatrace"],
+    "headerPatterns": {
+      "Server": ["Dynatrace"]
+    },
+    "htmlPatterns": ["Dynatrace", "dynatrace", "Dynatrace Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Splunk Enterprise",
+    "protocol": "http",
+    "ports": [8000, 8089, 8088, 9997],
+    "bannerPatterns": ["Splunk", "splunkd"],
+    "headerPatterns": {
+      "Server": ["Splunkd"]
+    },
+    "htmlPatterns": ["Splunk", "splunkd", "Splunk Enterprise"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Logstash",
+    "protocol": "http",
+    "ports": [9600, 9601, 9602],
+    "bannerPatterns": ["Logstash", "logstash"],
+    "headerPatterns": {
+      "Server": ["Logstash"]
+    },
+    "htmlPatterns": ["Logstash", "logstash", "Logstash API"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Fluentd",
+    "protocol": "http",
+    "ports": [24224, 24225, 24226],
+    "bannerPatterns": ["Fluentd", "fluentd"],
+    "headerPatterns": {
+      "Server": ["Fluentd"]
+    },
+    "htmlPatterns": ["Fluentd", "fluentd", "Fluentd API"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Fluent Bit",
+    "protocol": "http",
+    "ports": [2020, 2021, 2022],
+    "bannerPatterns": ["Fluent Bit", "fluent-bit"],
+    "headerPatterns": {
+      "Server": ["Fluent Bit"]
+    },
+    "htmlPatterns": ["Fluent Bit", "fluent-bit", "Fluent Bit API"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Vector",
+    "protocol": "http",
+    "ports": [8686, 8687, 8688],
+    "bannerPatterns": ["Vector", "vector"],
+    "headerPatterns": {
+      "Server": ["Vector"]
+    },
+    "htmlPatterns": ["Vector", "vector", "Vector API"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Filebeat",
+    "protocol": "http",
+    "ports": [5066, 5067, 5068],
+    "bannerPatterns": ["Filebeat", "filebeat"],
+    "headerPatterns": {
+      "Server": ["Filebeat"]
+    },
+    "htmlPatterns": ["Filebeat", "filebeat", "Filebeat API"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Metricbeat",
+    "protocol": "http",
+    "ports": [5066, 5067, 5068],
+    "bannerPatterns": ["Metricbeat", "metricbeat"],
+    "headerPatterns": {
+      "Server": ["Metricbeat"]
+    },
+    "htmlPatterns": ["Metricbeat", "metricbeat", "Metricbeat API"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Packetbeat",
+    "protocol": "http",
+    "ports": [5066, 5067, 5068],
+    "bannerPatterns": ["Packetbeat", "packetbeat"],
+    "headerPatterns": {
+      "Server": ["Packetbeat"]
+    },
+    "htmlPatterns": ["Packetbeat", "packetbeat", "Packetbeat API"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Heartbeat",
+    "protocol": "http",
+    "ports": [5066, 5067, 5068],
+    "bannerPatterns": ["Heartbeat", "heartbeat"],
+    "headerPatterns": {
+      "Server": ["Heartbeat"]
+    },
+    "htmlPatterns": ["Heartbeat", "heartbeat", "Heartbeat API"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Auditbeat",
+    "protocol": "http",
+    "ports": [5066, 5067, 5068],
+    "bannerPatterns": ["Auditbeat", "auditbeat"],
+    "headerPatterns": {
+      "Server": ["Auditbeat"]
+    },
+    "htmlPatterns": ["Auditbeat", "auditbeat", "Auditbeat API"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Journalbeat",
+    "protocol": "http",
+    "ports": [5066, 5067, 5068],
+    "bannerPatterns": ["Journalbeat", "journalbeat"],
+    "headerPatterns": {
+      "Server": ["Journalbeat"]
+    },
+    "htmlPatterns": ["Journalbeat", "journalbeat", "Journalbeat API"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Functionbeat",
+    "protocol": "http",
+    "ports": [5066, 5067, 5068],
+    "bannerPatterns": ["Functionbeat", "functionbeat"],
+    "headerPatterns": {
+      "Server": ["Functionbeat"]
+    },
+    "htmlPatterns": ["Functionbeat", "functionbeat", "Functionbeat API"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Winlogbeat",
+    "protocol": "http",
+    "ports": [5066, 5067, 5068],
+    "bannerPatterns": ["Winlogbeat", "winlogbeat"],
+    "headerPatterns": {
+      "Server": ["Winlogbeat"]
+    },
+    "htmlPatterns": ["Winlogbeat", "winlogbeat", "Winlogbeat API"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Rsyslog",
+    "protocol": "tcp",
+    "ports": [514, 515, 516, 517],
+    "bannerPatterns": ["rsyslog", "RSYSLOG"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "medium"
+  },
+  {
+    "serviceName": "Syslog-ng",
+    "protocol": "tcp",
+    "ports": [514, 515, 516, 517],
+    "bannerPatterns": ["syslog-ng", "SYSLOG-NG"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "medium"
+  },
+  {
+    "serviceName": "NXLog",
+    "protocol": "tcp",
+    "ports": [514, 515, 516, 517],
+    "bannerPatterns": ["NXLog", "nxlog"],
+    "headerPatterns": {},
+    "htmlPatterns": [],
+    "confidence": "medium"
+  },
+  {
+    "serviceName": "Graylog (Alternative)",
+    "protocol": "http",
+    "ports": [9000, 9001, 9002],
+    "bannerPatterns": ["Graylog", "graylog-server"],
+    "headerPatterns": {
+      "Server": ["Graylog"]
+    },
+    "htmlPatterns": ["Graylog", "graylog-server", "Graylog Server"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Loggly",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Loggly", "loggly"],
+    "headerPatterns": {
+      "Server": ["Loggly"]
+    },
+    "htmlPatterns": ["Loggly", "loggly", "Loggly Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "LogEntries",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["LogEntries", "logentries"],
+    "headerPatterns": {
+      "Server": ["LogEntries"]
+    },
+    "htmlPatterns": ["LogEntries", "logentries", "LogEntries Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Papertrail",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Papertrail", "papertrail"],
+    "headerPatterns": {
+      "Server": ["Papertrail"]
+    },
+    "htmlPatterns": ["Papertrail", "papertrail", "Papertrail Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Sumo Logic",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Sumo Logic", "sumologic"],
+    "headerPatterns": {
+      "Server": ["Sumo Logic"]
+    },
+    "htmlPatterns": ["Sumo Logic", "sumologic", "Sumo Logic Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Logz.io",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Logz.io", "logz.io"],
+    "headerPatterns": {
+      "Server": ["Logz.io"]
+    },
+    "htmlPatterns": ["Logz.io", "logz.io", "Logz.io Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Elastic Cloud",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Elastic Cloud", "elastic-cloud"],
+    "headerPatterns": {
+      "Server": ["Elastic Cloud"]
+    },
+    "htmlPatterns": ["Elastic Cloud", "elastic-cloud", "Elastic Cloud Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "AWS CloudWatch",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["CloudWatch", "cloudwatch"],
+    "headerPatterns": {
+      "Server": ["CloudWatch"]
+    },
+    "htmlPatterns": ["CloudWatch", "cloudwatch", "CloudWatch Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Google Cloud Logging",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Google Cloud Logging", "stackdriver"],
+    "headerPatterns": {
+      "Server": ["Google"]
+    },
+    "htmlPatterns": ["Google Cloud Logging", "stackdriver", "Google Cloud Logging Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Azure Monitor",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Azure Monitor", "azure-monitor"],
+    "headerPatterns": {
+      "Server": ["Azure"]
+    },
+    "htmlPatterns": ["Azure Monitor", "azure-monitor", "Azure Monitor Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "IBM Cloud Monitoring",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["IBM Cloud Monitoring", "ibm-cloud-monitoring"],
+    "headerPatterns": {
+      "Server": ["IBM"]
+    },
+    "htmlPatterns": ["IBM Cloud Monitoring", "ibm-cloud-monitoring", "IBM Cloud Monitoring Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Oracle Cloud Monitoring",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Oracle Cloud Monitoring", "oracle-cloud-monitoring"],
+    "headerPatterns": {
+      "Server": ["Oracle"]
+    },
+    "htmlPatterns": ["Oracle Cloud Monitoring", "oracle-cloud-monitoring", "Oracle Cloud Monitoring Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Alibaba Cloud Monitor",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Alibaba Cloud Monitor", "alibaba-cloud-monitor"],
+    "headerPatterns": {
+      "Server": ["Alibaba"]
+    },
+    "htmlPatterns": ["Alibaba Cloud Monitor", "alibaba-cloud-monitor", "Alibaba Cloud Monitor Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Tencent Cloud Monitor",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Tencent Cloud Monitor", "tencent-cloud-monitor"],
+    "headerPatterns": {
+      "Server": ["Tencent"]
+    },
+    "htmlPatterns": ["Tencent Cloud Monitor", "tencent-cloud-monitor", "Tencent Cloud Monitor Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "DigitalOcean Monitoring",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["DigitalOcean Monitoring", "digitalocean-monitoring"],
+    "headerPatterns": {
+      "Server": ["DigitalOcean"]
+    },
+    "htmlPatterns": ["DigitalOcean Monitoring", "digitalocean-monitoring", "DigitalOcean Monitoring Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Linode Manager",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Linode Manager", "linode-manager"],
+    "headerPatterns": {
+      "Server": ["Linode"]
+    },
+    "htmlPatterns": ["Linode Manager", "linode-manager", "Linode Manager Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Vultr Control Panel",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Vultr Control Panel", "vultr-control-panel"],
+    "headerPatterns": {
+      "Server": ["Vultr"]
+    },
+    "htmlPatterns": ["Vultr Control Panel", "vultr-control-panel", "Vultr Control Panel Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "OVH Control Panel",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["OVH Control Panel", "ovh-control-panel"],
+    "headerPatterns": {
+      "Server": ["OVH"]
+    },
+    "htmlPatterns": ["OVH Control Panel", "ovh-control-panel", "OVH Control Panel Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Hetzner Robot",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Hetzner Robot", "hetzner-robot"],
+    "headerPatterns": {
+      "Server": ["Hetzner"]
+    },
+    "htmlPatterns": ["Hetzner Robot", "hetzner-robot", "Hetzner Robot Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Scaleway Console",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Scaleway Console", "scaleway-console"],
+    "headerPatterns": {
+      "Server": ["Scaleway"]
+    },
+    "htmlPatterns": ["Scaleway Console", "scaleway-console", "Scaleway Console Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "UpCloud Control Panel",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["UpCloud Control Panel", "upcloud-control-panel"],
+    "headerPatterns": {
+      "Server": ["UpCloud"]
+    },
+    "htmlPatterns": ["UpCloud Control Panel", "upcloud-control-panel", "UpCloud Control Panel Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Exoscale Console",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Exoscale Console", "exoscale-console"],
+    "headerPatterns": {
+      "Server": ["Exoscale"]
+    },
+    "htmlPatterns": ["Exoscale Console", "exoscale-console", "Exoscale Console Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Packet Console",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Packet Console", "packet-console"],
+    "headerPatterns": {
+      "Server": ["Packet"]
+    },
+    "htmlPatterns": ["Packet Console", "packet-console", "Packet Console Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Rackspace Control Panel",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Rackspace Control Panel", "rackspace-control-panel"],
+    "headerPatterns": {
+      "Server": ["Rackspace"]
+    },
+    "htmlPatterns": ["Rackspace Control Panel", "rackspace-control-panel", "Rackspace Control Panel Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "GoDaddy Control Panel",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["GoDaddy Control Panel", "godaddy-control-panel"],
+    "headerPatterns": {
+      "Server": ["GoDaddy"]
+    },
+    "htmlPatterns": ["GoDaddy Control Panel", "godaddy-control-panel", "GoDaddy Control Panel Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Namecheap Control Panel",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Namecheap Control Panel", "namecheap-control-panel"],
+    "headerPatterns": {
+      "Server": ["Namecheap"]
+    },
+    "htmlPatterns": ["Namecheap Control Panel", "namecheap-control-panel", "Namecheap Control Panel Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Bluehost Control Panel",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Bluehost Control Panel", "bluehost-control-panel"],
+    "headerPatterns": {
+      "Server": ["Bluehost"]
+    },
+    "htmlPatterns": ["Bluehost Control Panel", "bluehost-control-panel", "Bluehost Control Panel Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "HostGator Control Panel",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["HostGator Control Panel", "hostgator-control-panel"],
+    "headerPatterns": {
+      "Server": ["HostGator"]
+    },
+    "htmlPatterns": ["HostGator Control Panel", "hostgator-control-panel", "HostGator Control Panel Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "SiteGround Control Panel",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["SiteGround Control Panel", "siteground-control-panel"],
+    "headerPatterns": {
+      "Server": ["SiteGround"]
+    },
+    "htmlPatterns": ["SiteGround Control Panel", "siteground-control-panel", "SiteGround Control Panel Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "DreamHost Control Panel",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["DreamHost Control Panel", "dreamhost-control-panel"],
+    "headerPatterns": {
+      "Server": ["DreamHost"]
+    },
+    "htmlPatterns": ["DreamHost Control Panel", "dreamhost-control-panel", "DreamHost Control Panel Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "InMotion Control Panel",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["InMotion Control Panel", "inmotion-control-panel"],
+    "headerPatterns": {
+      "Server": ["InMotion"]
+    },
+    "htmlPatterns": ["InMotion Control Panel", "inmotion-control-panel", "InMotion Control Panel Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "A2 Hosting Control Panel",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["A2 Hosting Control Panel", "a2-hosting-control-panel"],
+    "headerPatterns": {
+      "Server": ["A2 Hosting"]
+    },
+    "htmlPatterns": ["A2 Hosting Control Panel", "a2-hosting-control-panel", "A2 Hosting Control Panel Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "GreenGeeks Control Panel",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["GreenGeeks Control Panel", "greengeeks-control-panel"],
+    "headerPatterns": {
+      "Server": ["GreenGeeks"]
+    },
+    "htmlPatterns": ["GreenGeeks Control Panel", "greengeeks-control-panel", "GreenGeeks Control Panel Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "WP Engine Control Panel",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["WP Engine Control Panel", "wp-engine-control-panel"],
+    "headerPatterns": {
+      "Server": ["WP Engine"]
+    },
+    "htmlPatterns": ["WP Engine Control Panel", "wp-engine-control-panel", "WP Engine Control Panel Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Kinsta Control Panel",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Kinsta Control Panel", "kinsta-control-panel"],
+    "headerPatterns": {
+      "Server": ["Kinsta"]
+    },
+    "htmlPatterns": ["Kinsta Control Panel", "kinsta-control-panel", "Kinsta Control Panel Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Flywheel Control Panel",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Flywheel Control Panel", "flywheel-control-panel"],
+    "headerPatterns": {
+      "Server": ["Flywheel"]
+    },
+    "htmlPatterns": ["Flywheel Control Panel", "flywheel-control-panel", "Flywheel Control Panel Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Pantheon Control Panel",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Pantheon Control Panel", "pantheon-control-panel"],
+    "headerPatterns": {
+      "Server": ["Pantheon"]
+    },
+    "htmlPatterns": ["Pantheon Control Panel", "pantheon-control-panel", "Pantheon Control Panel Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Platform.sh Control Panel",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Platform.sh Control Panel", "platform-sh-control-panel"],
+    "headerPatterns": {
+      "Server": ["Platform.sh"]
+    },
+    "htmlPatterns": ["Platform.sh Control Panel", "platform-sh-control-panel", "Platform.sh Control Panel Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Acquia Control Panel",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Acquia Control Panel", "acquia-control-panel"],
+    "headerPatterns": {
+      "Server": ["Acquia"]
+    },
+    "htmlPatterns": ["Acquia Control Panel", "acquia-control-panel", "Acquia Control Panel Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Netlify Control Panel",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Netlify Control Panel", "netlify-control-panel"],
+    "headerPatterns": {
+      "Server": ["Netlify"]
+    },
+    "htmlPatterns": ["Netlify Control Panel", "netlify-control-panel", "Netlify Control Panel Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Vercel Control Panel",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Vercel Control Panel", "vercel-control-panel"],
+    "headerPatterns": {
+      "Server": ["Vercel"]
+    },
+    "htmlPatterns": ["Vercel Control Panel", "vercel-control-panel", "Vercel Control Panel Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Heroku Dashboard",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Heroku Dashboard", "heroku-dashboard"],
+    "headerPatterns": {
+      "Server": ["Heroku"]
+    },
+    "htmlPatterns": ["Heroku Dashboard", "heroku-dashboard", "Heroku Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Render Dashboard",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Render Dashboard", "render-dashboard"],
+    "headerPatterns": {
+      "Server": ["Render"]
+    },
+    "htmlPatterns": ["Render Dashboard", "render-dashboard", "Render Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Railway Dashboard",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Railway Dashboard", "railway-dashboard"],
+    "headerPatterns": {
+      "Server": ["Railway"]
+    },
+    "htmlPatterns": ["Railway Dashboard", "railway-dashboard", "Railway Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Fly.io Dashboard",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Fly.io Dashboard", "fly-io-dashboard"],
+    "headerPatterns": {
+      "Server": ["Fly.io"]
+    },
+    "htmlPatterns": ["Fly.io Dashboard", "fly-io-dashboard", "Fly.io Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "DigitalOcean App Platform",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["DigitalOcean App Platform", "digitalocean-app-platform"],
+    "headerPatterns": {
+      "Server": ["DigitalOcean"]
+    },
+    "htmlPatterns": ["DigitalOcean App Platform", "digitalocean-app-platform", "DigitalOcean App Platform Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "AWS Amplify Console",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["AWS Amplify Console", "aws-amplify-console"],
+    "headerPatterns": {
+      "Server": ["AWS"]
+    },
+    "htmlPatterns": ["AWS Amplify Console", "aws-amplify-console", "AWS Amplify Console Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Google Cloud Run",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Google Cloud Run", "google-cloud-run"],
+    "headerPatterns": {
+      "Server": ["Google"]
+    },
+    "htmlPatterns": ["Google Cloud Run", "google-cloud-run", "Google Cloud Run Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Azure Container Instances",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Azure Container Instances", "azure-container-instances"],
+    "headerPatterns": {
+      "Server": ["Azure"]
+    },
+    "htmlPatterns": ["Azure Container Instances", "azure-container-instances", "Azure Container Instances Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "IBM Cloud Code Engine",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["IBM Cloud Code Engine", "ibm-cloud-code-engine"],
+    "headerPatterns": {
+      "Server": ["IBM"]
+    },
+    "htmlPatterns": ["IBM Cloud Code Engine", "ibm-cloud-code-engine", "IBM Cloud Code Engine Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Oracle Cloud Functions",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Oracle Cloud Functions", "oracle-cloud-functions"],
+    "headerPatterns": {
+      "Server": ["Oracle"]
+    },
+    "htmlPatterns": ["Oracle Cloud Functions", "oracle-cloud-functions", "Oracle Cloud Functions Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Alibaba Function Compute",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Alibaba Function Compute", "alibaba-function-compute"],
+    "headerPatterns": {
+      "Server": ["Alibaba"]
+    },
+    "htmlPatterns": ["Alibaba Function Compute", "alibaba-function-compute", "Alibaba Function Compute Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Tencent Cloud Function",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Tencent Cloud Function", "tencent-cloud-function"],
+    "headerPatterns": {
+      "Server": ["Tencent"]
+    },
+    "htmlPatterns": ["Tencent Cloud Function", "tencent-cloud-function", "Tencent Cloud Function Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Cloudflare Workers",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Cloudflare Workers", "cloudflare-workers"],
+    "headerPatterns": {
+      "Server": ["Cloudflare"]
+    },
+    "htmlPatterns": ["Cloudflare Workers", "cloudflare-workers", "Cloudflare Workers Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Fastly Compute@Edge",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Fastly Compute@Edge", "fastly-compute-edge"],
+    "headerPatterns": {
+      "Server": ["Fastly"]
+    },
+    "htmlPatterns": ["Fastly Compute@Edge", "fastly-compute-edge", "Fastly Compute@Edge Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Akamai EdgeWorkers",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Akamai EdgeWorkers", "akamai-edgeworkers"],
+    "headerPatterns": {
+      "Server": ["Akamai"]
+    },
+    "htmlPatterns": ["Akamai EdgeWorkers", "akamai-edgeworkers", "Akamai EdgeWorkers Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Lambda@Edge",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Lambda@Edge", "lambda-edge"],
+    "headerPatterns": {
+      "Server": ["AWS"]
+    },
+    "htmlPatterns": ["Lambda@Edge", "lambda-edge", "Lambda@Edge Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Google Cloud Functions",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Google Cloud Functions", "google-cloud-functions"],
+    "headerPatterns": {
+      "Server": ["Google"]
+    },
+    "htmlPatterns": ["Google Cloud Functions", "google-cloud-functions", "Google Cloud Functions Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Azure Functions",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["Azure Functions", "azure-functions"],
+    "headerPatterns": {
+      "Server": ["Azure"]
+    },
+    "htmlPatterns": ["Azure Functions", "azure-functions", "Azure Functions Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "IBM Cloud Functions",
+    "protocol": "https",
+    "ports": [443, 8443],
+    "bannerPatterns": ["IBM Cloud Functions", "ibm-cloud-functions"],
+    "headerPatterns": {
+      "Server": ["IBM"]
+    },
+    "htmlPatterns": ["IBM Cloud Functions", "ibm-cloud-functions", "IBM Cloud Functions Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "OpenFaaS",
+    "protocol": "http",
+    "ports": [8080, 8081, 8082],
+    "bannerPatterns": ["OpenFaaS", "openfaas"],
+    "headerPatterns": {
+      "Server": ["OpenFaaS"]
+    },
+    "htmlPatterns": ["OpenFaaS", "openfaas", "OpenFaaS Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Knative",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["Knative", "knative"],
+    "headerPatterns": {
+      "Server": ["Knative"]
+    },
+    "htmlPatterns": ["Knative", "knative", "Knative Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Fission",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["Fission", "fission"],
+    "headerPatterns": {
+      "Server": ["Fission"]
+    },
+    "htmlPatterns": ["Fission", "fission", "Fission Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Kubeless",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["Kubeless", "kubeless"],
+    "headerPatterns": {
+      "Server": ["Kubeless"]
+    },
+    "htmlPatterns": ["Kubeless", "kubeless", "Kubeless Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "OpenWhisk",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["OpenWhisk", "openwhisk"],
+    "headerPatterns": {
+      "Server": ["OpenWhisk"]
+    },
+    "htmlPatterns": ["OpenWhisk", "openwhisk", "OpenWhisk Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Fn Project",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["Fn Project", "fn-project"],
+    "headerPatterns": {
+      "Server": ["Fn Project"]
+    },
+    "htmlPatterns": ["Fn Project", "fn-project", "Fn Project Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "IronFunctions",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["IronFunctions", "iron-functions"],
+    "headerPatterns": {
+      "Server": ["IronFunctions"]
+    },
+    "htmlPatterns": ["IronFunctions", "iron-functions", "IronFunctions Dashboard"],
+    "confidence": "high"
+  },
+  {
+    "serviceName": "Nuclio",
+    "protocol": "http",
+    "ports": [80, 443, 8080],
+    "bannerPatterns": ["Nuclio", "nuclio"],
+    "headerPatterns": {
+      "Server": ["Nuclio"]
+    },
+    "htmlPatterns": ["Nuclio", "nuclio", "Nuclio Dashboard"],
+    "confidence": "high"
+  }
+]
