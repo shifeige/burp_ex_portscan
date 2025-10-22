@@ -4,6 +4,8 @@ burpsuite端口扫描插件
 ## 📖 项目简介
 
 **Advanced Port Scanner** 是一款功能强大的 BurpSuite 扩展插件，专为渗透测试人员和安全研究人员设计。它集成了主动扫描、被动监控和智能服务指纹识别功能，能够高效地发现网络资产和服务。
+<img width="1440" height="900" alt="image" src="https://github.com/user-attachments/assets/5cbba2b6-efce-48c8-9cf0-44cdbde7ecc0" />
+
 
 ## ✨ 核心特性
 
